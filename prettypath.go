@@ -53,6 +53,7 @@ func main() {
 		return
 	}
 
+	// configure PATH or CLASSPATH
 	var pathVar string = "PATH"
 	if(stringInSlice("-j", args)) {
 		pathVar = "CLASSPATH"
