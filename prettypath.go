@@ -42,20 +42,20 @@ func main() {
 	args := os.Args[1:]
 	
 	// show version info.
-	if(stringInSlice("-v", args)) {
+	if stringInSlice("-v", args) {
 		fmt.Println("prettypath v 1.0")
 		return
 	}
 
 	// display help information.
-	if(stringInSlice("-h", args)) {
+	if stringInSlice("-h", args) {
 		fmt.Println(helpMsg)
 		return
 	}
 
 	// configure PATH or CLASSPATH
 	var pathVar string = "PATH"
-	if(stringInSlice("-j", args)) {
+	if stringInSlice("-j", args) {
 		pathVar = "CLASSPATH"
 	}
 
@@ -64,7 +64,7 @@ func main() {
 	path_entries := filepath.SplitList(path)
 	
 	// sort alphabetically if requested.
-	if(stringInSlice("-a", args)) {
+	if stringInSlice("-a", args) {
 		sort.Strings(path_entries)
 	}
 
